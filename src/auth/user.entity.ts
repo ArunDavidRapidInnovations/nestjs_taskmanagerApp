@@ -1,10 +1,10 @@
-import { Task } from 'src/tasks/task.entity';
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Task } from '../tasks/task.entity';
+import { Column, Entity, ObjectID, ObjectIdColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @ObjectIdColumn('uuid')
+  id: ObjectID;
 
   @Column({ unique: true })
   username: string;
